@@ -86,7 +86,7 @@ def linear_regression(epochs, learning_rate):
         # print("Epoch: " + str(j) + " validation_error : " + str(validation_error) + " train_error : " + str(train_error))
 
     test_rmse = evaluate_rmse(params, test_set_x1, test_set_x2, test_set_y)
-    print("Test rmse gradient_descent: " + str(test_rmse))
+    print("Test RMSE gradient_descent: " + str(test_rmse))
 
     plt.plot(list(range(0, epochs)), train_error_list, c = 'b')
     plt.plot(list(range(0, epochs)), validation_error_list, c = 'r')
@@ -116,7 +116,7 @@ def ridge_regression(epochs, learning_rate, alpha):
         # print("Epoch: " + str(i) + "validation_error : " + str(validation_error) + "train_error : " + str(train_error))
 
     test_rmse = evaluate_rmse(params, test_set_x1, test_set_x2, test_set_y)
-    print("Test rmse ridge_regression: " + str(test_rmse))
+    print("Test RMSE ridge_regression: " + str(test_rmse))
 
     plt.plot(list(range(0, epochs)), train_error_list, c = 'b')
     plt.plot(list(range(0, epochs)), validation_error_list, c = 'r')
@@ -152,7 +152,7 @@ def lasso_regression(epochs, learning_rate, alpha):
         # print("Epoch: " + str(j) + " validation_error : " + str(validation_error) + "train_error : " + str(train_error))
 
     test_rmse = evaluate_rmse(params, test_set_x1, test_set_x2, test_set_y)
-    print("Test rmse lasso_regression: " + str(test_rmse))
+    print("Test RMSE lasso_regression: " + str(test_rmse))
 
     plt.plot(list(range(0, epochs)), train_error_list, c = 'b')
     plt.plot(list(range(0, epochs)), validation_error_list, c = 'r')
@@ -188,7 +188,7 @@ def linear_regression_batch(epochs, learning_rate, batch_size):
         # print("Epoch: " + str(i) + "validation_error : " + str(validation_error) + "train_error : " + str(train_error))
     
     test_rmse = evaluate_rmse(params, test_set_x1, test_set_x2, test_set_y)
-    print("Test rmse minibatch_gradient: " + str(test_rmse))
+    print("Test RMSE minibatch_gradient " + str(batch_size) + " : " + str(test_rmse))
 
     plt.plot(list(range(0, epochs)), train_error_list, c = 'b')
     plt.plot(list(range(0, epochs)), validation_error_list, c = 'r')
@@ -225,7 +225,7 @@ def ridge_regression_batch(epochs, learning_rate, alpha, batch_size):
         # print("Epoch: " + str(i) + "validation_error : " + str(validation_error) + "train_error : " + str(train_error))
     
     test_rmse = evaluate_rmse(params, test_set_x1, test_set_x2, test_set_y)
-    print("Test rmse ridge_regression: " + str(test_rmse))
+    print("Test RMSE ridge_regression " + str(batch_size) + " : " + str(test_rmse))
 
     plt.plot(list(range(0, epochs)), train_error_list, c = 'b')
     plt.plot(list(range(0, epochs)), validation_error_list, c = 'r')
@@ -272,14 +272,14 @@ def lasso_regression_batch(epochs, learning_rate, alpha, batch_size):
         # print("Epoch: " + str(i) + "validation_error : " + str(validation_error) + "train_error : " + str(train_error))
     
     test_rmse = evaluate_rmse(params, test_set_x1, test_set_x2, test_set_y)
-    print("Test rmse lasso_regression_minibatch : " + str(test_rmse))
+    print("Test RMSE lasso_regression_minibatch with batch size " + str(batch_size) + " : " + str(test_rmse))
 
     plt.plot(list(range(0, epochs)), train_error_list, c = 'b')
     plt.plot(list(range(0, epochs)), validation_error_list, c = 'r')
     plt.savefig("minibatch_lasso_regression.png")
     plt.show()
 
-    
+
 batch_size = 100
 
 linear_regression(70, 0.001)    
